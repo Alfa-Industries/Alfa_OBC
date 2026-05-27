@@ -1,2 +1,2 @@
-../App/Src/app.c:8:6:App_Setup	8
-../App/Src/app.c:46:6:App_Loop	1
+../App/Src/app.c:3:6:App_Setup	1
+../App/Src/app.c:7:6:App_Loop	1
