@@ -1,0 +1,7 @@
+../AlfaSDK/Src/alfa_rtc.c:6:6:Alfa_RTC_Init	1
+../AlfaSDK/Src/alfa_rtc.c:15:9:Alfa_RTC_IsConfigured	1
+../AlfaSDK/Src/alfa_rtc.c:25:9:Alfa_RTC_SetDateTime	3
+../AlfaSDK/Src/alfa_rtc.c:70:9:Alfa_RTC_SetDefaultIfNeeded	2
+../AlfaSDK/Src/alfa_rtc.c:92:6:Alfa_RTC_GetTime	2
+../AlfaSDK/Src/alfa_rtc.c:104:6:Alfa_RTC_GetDate	2
+../AlfaSDK/Src/alfa_rtc.c:122:10:Alfa_RTC_GetBackupRegister	1

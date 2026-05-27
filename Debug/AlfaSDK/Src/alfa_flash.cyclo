@@ -1,0 +1,7 @@
+../AlfaSDK/Src/alfa_flash.c:9:13:FLASH_Select	1
+../AlfaSDK/Src/alfa_flash.c:14:13:FLASH_Deselect	1
+../AlfaSDK/Src/alfa_flash.c:19:6:Alfa_FLASH_Init	1
+../AlfaSDK/Src/alfa_flash.c:24:9:Alfa_FLASH_ReadJEDEC	4
+../AlfaSDK/Src/alfa_flash.c:58:9:Alfa_FLASH_ReadStatus	4
+../AlfaSDK/Src/alfa_flash.c:89:9:Alfa_FLASH_IsReady	2
+../AlfaSDK/Src/alfa_flash.c:101:9:Alfa_FLASH_Test	5
