@@ -6,7 +6,7 @@ void Alfa_RGB_Init(void)
     Alfa_RGB_Off();
 }
 
-void Alfa_RGB_SetGreen(void)
+void Alfa_RGB_SetRed(void)
 {
     Alfa_RGB_Off();
 
@@ -15,7 +15,7 @@ void Alfa_RGB_SetGreen(void)
                       GPIO_PIN_RESET);
 }
 
-void Alfa_RGB_SetRed(void)
+void Alfa_RGB_SetGreen(void)
 {
     Alfa_RGB_Off();
 

@@ -13,12 +13,12 @@ void Error_Handler(void);
 
 #define nCS_FLASH_Pin GPIO_PIN_4
 #define nCS_FLASH_GPIO_Port GPIOA
-#define red_Pin GPIO_PIN_6
-#define red_GPIO_Port GPIOC
+#define green_Pin GPIO_PIN_6
+#define green_GPIO_Port GPIOC
 #define blue_Pin GPIO_PIN_7
 #define blue_GPIO_Port GPIOC
-#define green_Pin GPIO_PIN_8
-#define green_GPIO_Port GPIOC
+#define red_Pin GPIO_PIN_8
+#define red_GPIO_Port GPIOC
 #define nCS_RAM_Pin GPIO_PIN_15
 #define nCS_RAM_GPIO_Port GPIOA
 #define SCK_FLASH_Pin GPIO_PIN_10
