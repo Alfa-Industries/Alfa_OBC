@@ -6,11 +6,14 @@ RTC_HandleTypeDef hrtc;
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi3;
 
+UART_HandleTypeDef huart1;
+
 /* Private init functions */
 static void MX_GPIO_Init(void);
 static void MX_RTC_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_SPI3_Init(void);
+static void MX_USART1_UART_Init(void);
 
 void Alfa_Board_Init(void)
 {
@@ -22,6 +25,7 @@ void Alfa_Board_Init(void)
     MX_RTC_Init();
     MX_SPI1_Init();
     MX_SPI3_Init();
+    MX_USART1_UART_Init();
 }
 
 void SystemClock_Config(void)
@@ -78,38 +82,11 @@ void SystemClock_Config(void)
 
 static void MX_RTC_Init(void)
 {
-    RTC_TimeTypeDef sTime = {0};
-    RTC_DateTypeDef DateToUpdate = {0};
-
     hrtc.Instance = RTC;
     hrtc.Init.AsynchPrediv = RTC_AUTO_1_SECOND;
     hrtc.Init.OutPut = RTC_OUTPUTSOURCE_ALARM;
 
     if (HAL_RTC_Init(&hrtc) != HAL_OK)
-    {
-        Error_Handler();
-    }
-
-    /*
-     * IMPORTANTE:
-     * En una siguiente iteración conviene proteger esto con backup register,
-     * para no reiniciar la hora cada vez que arranca el firmware.
-     */
-    sTime.Hours = 0x0;
-    sTime.Minutes = 0x0;
-    sTime.Seconds = 0x0;
-
-    if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
-    {
-        Error_Handler();
-    }
-
-    DateToUpdate.WeekDay = RTC_WEEKDAY_MONDAY;
-    DateToUpdate.Month = RTC_MONTH_JANUARY;
-    DateToUpdate.Date = 0x1;
-    DateToUpdate.Year = 0x0;
-
-    if (HAL_RTC_SetDate(&hrtc, &DateToUpdate, RTC_FORMAT_BCD) != HAL_OK)
     {
         Error_Handler();
     }
@@ -152,6 +129,23 @@ static void MX_SPI3_Init(void)
     hspi3.Init.CRCPolynomial = 10;
 
     if (HAL_SPI_Init(&hspi3) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+static void MX_USART1_UART_Init(void)
+{
+    huart1.Instance = USART1;
+    huart1.Init.BaudRate = 115200;
+    huart1.Init.WordLength = UART_WORDLENGTH_8B;
+    huart1.Init.StopBits = UART_STOPBITS_1;
+    huart1.Init.Parity = UART_PARITY_NONE;
+    huart1.Init.Mode = UART_MODE_TX_RX;
+    huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+    huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+
+    if (HAL_UART_Init(&huart1) != HAL_OK)
     {
         Error_Handler();
     }
