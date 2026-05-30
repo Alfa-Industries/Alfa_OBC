@@ -1,8 +1,0 @@
-../AlfaSDK/Src/alfa_rgb.c:4:6:Alfa_RGB_Init	1
-../AlfaSDK/Src/alfa_rgb.c:9:6:Alfa_RGB_SetGreen	1
-../AlfaSDK/Src/alfa_rgb.c:18:6:Alfa_RGB_SetRed	1
-../AlfaSDK/Src/alfa_rgb.c:27:6:Alfa_RGB_SetBlue	1
-../AlfaSDK/Src/alfa_rgb.c:36:6:Alfa_RGB_Off	1
-../AlfaSDK/Src/alfa_rgb.c:45:6:Alfa_RGB_ToggleRed	1
-../AlfaSDK/Src/alfa_rgb.c:50:6:Alfa_RGB_ToggleGreen	1
-../AlfaSDK/Src/alfa_rgb.c:55:6:Alfa_RGB_ToggleBlue	1

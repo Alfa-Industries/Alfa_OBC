@@ -1,9 +1,0 @@
-../AlfaSDK/Src/alfa_sram.c:13:13:SRAM_Select	8	static
-../AlfaSDK/Src/alfa_sram.c:18:13:SRAM_Deselect	8	static
-../AlfaSDK/Src/alfa_sram.c:23:16:SRAM_WriteMode	24	static
-../AlfaSDK/Src/alfa_sram.c:34:6:Alfa_SRAM_Init	8	static
-../AlfaSDK/Src/alfa_sram.c:44:9:Alfa_SRAM_WriteByte	16	static
-../AlfaSDK/Src/alfa_sram.c:49:9:Alfa_SRAM_ReadByte	16	static
-../AlfaSDK/Src/alfa_sram.c:54:9:Alfa_SRAM_WriteBuffer	32	static
-../AlfaSDK/Src/alfa_sram.c:92:9:Alfa_SRAM_ReadBuffer	32	static
-../AlfaSDK/Src/alfa_sram.c:130:9:Alfa_SRAM_Test	32	static

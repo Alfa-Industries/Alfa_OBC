@@ -1,3 +1,4 @@
+
 #ifndef __MAIN_H
 #define __MAIN_H
 
@@ -6,6 +7,7 @@ extern "C" {
 #endif
 
 #include "stm32f1xx_hal.h"
+
 
 void Error_Handler(void);
 
@@ -32,8 +34,9 @@ void Error_Handler(void);
 #define MOSI_SRAM_Pin GPIO_PIN_5
 #define MOSI_SRAM_GPIO_Port GPIOB
 
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif
+#endif /* __MAIN_H */

@@ -1,7 +1,0 @@
-../AlfaSDK/Src/alfa_flash.c:9:13:FLASH_Select	8	static
-../AlfaSDK/Src/alfa_flash.c:14:13:FLASH_Deselect	8	static
-../AlfaSDK/Src/alfa_flash.c:19:6:Alfa_FLASH_Init	8	static
-../AlfaSDK/Src/alfa_flash.c:24:9:Alfa_FLASH_ReadJEDEC	24	static
-../AlfaSDK/Src/alfa_flash.c:58:9:Alfa_FLASH_ReadStatus	24	static
-../AlfaSDK/Src/alfa_flash.c:89:9:Alfa_FLASH_IsReady	16	static
-../AlfaSDK/Src/alfa_flash.c:101:9:Alfa_FLASH_Test	16	static

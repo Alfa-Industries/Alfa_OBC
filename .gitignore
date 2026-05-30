@@ -1,0 +1,50 @@
+# =========================
+# Build folders
+# =========================
+
+Debug/
+Release/
+build/
+Build/
+
+# STM32CubeIDE / Eclipse generated build files
+*.o
+*.d
+*.su
+*.cyclo
+*.elf
+*.map
+*.list
+*.bin
+*.hex
+*.lst
+
+# =========================
+# macOS files
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# =========================
+# STM32CubeMX project file
+# =========================
+
+*.ioc
+
+# =========================
+# Optional Eclipse metadata
+# =========================
+# OJO:
+# Estos archivos a veces sí conviene versionarlos si quieres
+# que el proyecto abra igual en STM32CubeIDE.
+# Descomenta solo si quieres ignorarlos también.
+#
+# .settings/
+# .cproject
+# .project
+# .mxproject

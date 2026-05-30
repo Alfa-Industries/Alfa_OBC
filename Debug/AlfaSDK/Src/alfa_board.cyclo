@@ -1,7 +1,0 @@
-../AlfaSDK/Src/alfa_board.c:15:6:Alfa_Board_Init	1
-../AlfaSDK/Src/alfa_board.c:27:6:SystemClock_Config	4
-../AlfaSDK/Src/alfa_board.c:79:13:MX_RTC_Init	4
-../AlfaSDK/Src/alfa_board.c:118:13:MX_SPI1_Init	2
-../AlfaSDK/Src/alfa_board.c:139:13:MX_SPI3_Init	2
-../AlfaSDK/Src/alfa_board.c:160:13:MX_GPIO_Init	1
-../AlfaSDK/Src/alfa_board.c:195:6:Error_Handler	1
