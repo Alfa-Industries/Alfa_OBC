@@ -8,7 +8,6 @@ extern "C" {
 
 #include "stm32f1xx_hal.h"
 
-
 void Error_Handler(void);
 
 #define nCS_FLASH_Pin GPIO_PIN_4
@@ -33,7 +32,6 @@ void Error_Handler(void);
 #define MISO_SRAM_GPIO_Port GPIOB
 #define MOSI_SRAM_Pin GPIO_PIN_5
 #define MOSI_SRAM_GPIO_Port GPIOB
-
 
 #ifdef __cplusplus
 }

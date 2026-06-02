@@ -7,11 +7,10 @@ extern "C" {
 
 #include "main.h"
 
+extern ADC_HandleTypeDef hadc1;
 extern RTC_HandleTypeDef hrtc;
-
 extern SPI_HandleTypeDef hspi1;
 extern SPI_HandleTypeDef hspi3;
-
 extern UART_HandleTypeDef huart1;
 
 void Alfa_Board_Init(void);

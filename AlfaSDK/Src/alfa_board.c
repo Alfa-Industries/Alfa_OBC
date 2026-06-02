@@ -1,11 +1,10 @@
 #include "alfa_board.h"
 
 /* Public peripheral handles */
+ADC_HandleTypeDef hadc1;
 RTC_HandleTypeDef hrtc;
-
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi3;
-
 UART_HandleTypeDef huart1;
 
 /* Private init functions */
@@ -14,6 +13,7 @@ static void MX_RTC_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_SPI3_Init(void);
 static void MX_USART1_UART_Init(void);
+static void MX_ADC1_Init(void);
 
 void Alfa_Board_Init(void)
 {
@@ -26,6 +26,7 @@ void Alfa_Board_Init(void)
     MX_SPI1_Init();
     MX_SPI3_Init();
     MX_USART1_UART_Init();
+    MX_ADC1_Init();
 }
 
 void SystemClock_Config(void)
@@ -151,6 +152,33 @@ static void MX_USART1_UART_Init(void)
     }
 }
 
+static void MX_ADC1_Init(void)
+{
+    ADC_ChannelConfTypeDef sConfig = {0};
+
+    hadc1.Instance = ADC1;
+    hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+    hadc1.Init.ContinuousConvMode = DISABLE;
+    hadc1.Init.DiscontinuousConvMode = DISABLE;
+    hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+    hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+    hadc1.Init.NbrOfConversion = 1;
+
+    if (HAL_ADC_Init(&hadc1) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
+    sConfig.Rank = ADC_REGULAR_RANK_1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;
+
+    if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
 static void MX_GPIO_Init(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -160,17 +188,7 @@ static void MX_GPIO_Init(void)
     __HAL_RCC_GPIOA_CLK_ENABLE();
     __HAL_RCC_GPIOB_CLK_ENABLE();
 
-    /*
-     * Memorias SPI:
-     * nCS debe iniciar en SET para dejarlas deseleccionadas.
-     */
     HAL_GPIO_WritePin(GPIOA, nCS_FLASH_Pin | nCS_RAM_Pin, GPIO_PIN_SET);
-
-    /*
-     * RGB:
-     * Asumimos LED activo en bajo.
-     * SET = apagado.
-     */
     HAL_GPIO_WritePin(GPIOC, red_Pin | blue_Pin | green_Pin, GPIO_PIN_SET);
 
     GPIO_InitStruct.Pin = nCS_FLASH_Pin | nCS_RAM_Pin;
