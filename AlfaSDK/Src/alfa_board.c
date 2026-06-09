@@ -1,4 +1,5 @@
 #include "alfa_board.h"
+#include "usb_device.h"
 
 /* Public peripheral handles */
 ADC_HandleTypeDef hadc1;
@@ -27,6 +28,7 @@ void Alfa_Board_Init(void)
     MX_SPI3_Init();
     MX_USART1_UART_Init();
     MX_ADC1_Init();
+    MX_USB_DEVICE_Init();
 }
 
 void SystemClock_Config(void)
