@@ -7,13 +7,11 @@ void App_Setup(void)
 {
     Alfa_DelayMs(1000);
 
-    Alfa_SerialPrintf("\r\n");
-    Alfa_SerialPrintf("Alfa OBC VCP Ready\r\n");
-
+    Alfa_SerialPrint(
+        "Hello World\r\n"
+    );
 }
 
 void App_Loop(void)
 {
-    Alfa_SerialPrintf("USB CDC VCP heartbeat\r\n");
-    Alfa_DelayMs(1000);
 }

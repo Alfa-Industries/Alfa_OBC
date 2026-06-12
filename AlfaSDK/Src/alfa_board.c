@@ -1,5 +1,6 @@
 #include "alfa_board.h"
 #include "usb_device.h"
+#include "alfa_config.h"
 
 /* Public peripheral handles */
 ADC_HandleTypeDef hadc1;
@@ -7,6 +8,7 @@ RTC_HandleTypeDef hrtc;
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi3;
 UART_HandleTypeDef huart1;
+IWDG_HandleTypeDef hiwdg;
 
 /* Private init functions */
 static void MX_GPIO_Init(void);
@@ -15,6 +17,10 @@ static void MX_SPI1_Init(void);
 static void MX_SPI3_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_ADC1_Init(void);
+
+#if ALFA_USE_IWDG
+static void MX_IWDG_Init(void);
+#endif
 
 void Alfa_Board_Init(void)
 {
@@ -29,6 +35,12 @@ void Alfa_Board_Init(void)
     MX_USART1_UART_Init();
     MX_ADC1_Init();
     MX_USB_DEVICE_Init();
+
+#if ALFA_USE_IWDG
+
+    MX_IWDG_Init();
+
+#endif
 }
 
 void SystemClock_Config(void)
@@ -205,6 +217,30 @@ static void MX_GPIO_Init(void)
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 }
+
+#if ALFA_USE_IWDG
+
+static void MX_IWDG_Init(void)
+
+{
+
+    hiwdg.Instance = IWDG;
+
+    hiwdg.Init.Prescaler = IWDG_PRESCALER_256;
+
+    hiwdg.Init.Reload = 4095;
+
+    if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+
+    {
+
+        Error_Handler();
+
+    }
+
+}
+
+#endif
 
 void Error_Handler(void)
 {
