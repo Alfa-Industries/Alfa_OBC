@@ -8,7 +8,12 @@ RTC_HandleTypeDef hrtc;
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi3;
 UART_HandleTypeDef huart1;
+
+#if ALFA_USE_IWDG
+
 IWDG_HandleTypeDef hiwdg;
+
+#endif
 
 /* Private init functions */
 static void MX_GPIO_Init(void);
@@ -34,6 +39,7 @@ void Alfa_Board_Init(void)
     MX_SPI3_Init();
     MX_USART1_UART_Init();
     MX_ADC1_Init();
+
     MX_USB_DEVICE_Init();
 
 #if ALFA_USE_IWDG

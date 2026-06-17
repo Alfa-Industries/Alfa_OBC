@@ -8,7 +8,7 @@ void App_Setup(void)
     Alfa_DelayMs(1000);
 
     Alfa_SerialPrint(
-        "Hello World\r\n"
+        "Hola Mundo\r\n Alfa OBC!!"
     );
 }
 
